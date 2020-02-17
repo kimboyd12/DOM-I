@@ -42,12 +42,12 @@ let logo = document.getElementById("logo-img");
 logo.src = siteContent['nav']['img-src']
 
 let navLinks = document.querySelectorAll('nav a')
-  navLinks[0].text = siteContent.nav['nav-link-1']
-  navLinks[1].text = siteContent.nav['nav-link-2']
-  navLinks[2].text = siteContent.nav['nav-link-3']
-  navLinks[3].text = siteContent.nav['nav-link-4']
-  navLinks[4].text = siteContent.nav['nav-link-5']
-  navLinks[5].text = siteContent.nav['nav-link-6']
+  navLinks[0].textContent = 'Services'
+  navLinks[1].textContent = 'Product'
+  navLinks[2].textContent = 'Vision'
+  navLinks[3].textContent = 'Features'
+  navLinks[4].textContent = 'About'
+  navLinks[5].textContent = 'Contact'
 
   let navBar = document.querySelector('header nav')
 
@@ -67,8 +67,10 @@ let navLinks = document.querySelectorAll('nav a')
     link.style.color = 'green'
   })
 
-  let ctaHeader = document.querySelector('.cta-text h1')
-  ctaHeader.innerText = siteContent.cta.h1
+  let ctaHeader = document.querySelector('h1');
+  let newHead = document.createElement('h1');
+    newHead.innerHTML = 'Dom <br> Is <br> Awesome';
+    ctaHeader.parentNode.replaceChild(newHead, ctaHeader);
 
   let ctaButton = document.querySelector('.cta-text button')
   ctaButton.innerText = siteContent.cta.button
