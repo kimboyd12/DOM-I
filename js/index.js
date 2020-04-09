@@ -102,3 +102,22 @@ let navLinks = document.querySelectorAll('nav a')
   contactInfo[0].innerHTML = siteContent.contact['address']
   contactInfo[1].innerHTML = siteContent.contact['phone']
   contactInfo[2].innerHTML = siteContent.contact['email']
+
+
+  // stretch
+
+  let darkModeButton = document.createElement('button')
+  darkModeButton.innerHTML = 'Switch to Dark Mode?'
+  navBar.append(darkModeButton)
+  darkModeButton.style.background = "black";
+  darkModeButton.style.color = "white";
+
+
+  let mainBackground = document.querySelector("body")
+  
+
+  darkModeButton.addEventListener('click', (e) => {
+    mainBackground.style.background = "#1a1a1a";
+    document.body.style.color = "#666666"
+    
+  })
