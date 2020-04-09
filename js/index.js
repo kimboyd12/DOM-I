@@ -39,4 +39,85 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.src = siteContent['nav']['img-src']
+
+let navLinks = document.querySelectorAll('nav a')
+  navLinks[0].textContent = 'Services'
+  navLinks[1].textContent = 'Product'
+  navLinks[2].textContent = 'Vision'
+  navLinks[3].textContent = 'Features'
+  navLinks[4].textContent = 'About'
+  navLinks[5].textContent = 'Contact'
+
+  let navBar = document.querySelector('header nav')
+
+
+  // adding two new items
+  let twitterLink = document.createElement('a')
+  twitterLink.innerHTML = 'Twitter'
+  navBar.append(twitterLink)
+  twitterLink.style.color = 'green'
+
+  let instagramLink = document.createElement('a')
+  instagramLink.innerHTML = 'Instagram'
+  navBar.prepend(instagramLink)
+  instagramLink.style.color = 'green'
+
+  navLinks.forEach(link => {
+    link.style.color = 'green'
+  })
+
+  let ctaHeader = document.querySelector('h1');
+  let newHead = document.createElement('h1');
+    newHead.innerHTML = 'Dom <br> Is <br> Awesome';
+    ctaHeader.parentNode.replaceChild(newHead, ctaHeader);
+
+  let ctaButton = document.querySelector('.cta-text button')
+  ctaButton.innerText = siteContent.cta.button
+
+  let ctaImage = document.getElementById('cta-img')
+  ctaImage.src = siteContent.cta['img-src']
+
+  let mainHeaders = document.querySelectorAll('.text-content h4')
+  mainHeaders[0].innerText = siteContent['main-content']['features-h4']
+  mainHeaders[1].innerText = siteContent['main-content']['about-h4']
+  mainHeaders[2].innerText = siteContent['main-content']['services-h4']
+  mainHeaders[3].innerText = siteContent['main-content']['product-h4']
+  mainHeaders[4].innerText = siteContent['main-content']['vision-h4']
+
+  let mainContent = document.querySelectorAll('.text-content p')
+  mainContent[0].innerHTML = siteContent['main-content']['features-content']
+  mainContent[1].innerHTML = siteContent['main-content']['about-content']
+  mainContent[2].innerHTML = siteContent['main-content']['services-content']
+  mainContent[3].innerHTML = siteContent['main-content']['product-content']
+  mainContent[4].innerHTML = siteContent['main-content']['vision-content']
+
+  let mainImg = document.getElementById('middle-img')
+  mainImg.src = siteContent['main-content']['middle-img-src']
+
+  let contactHeading = document.querySelector('.contact h4')
+  contactHeading.innerText = siteContent.contact['contact-h4']
+
+  let contactInfo = document.querySelectorAll('.contact p')
+  contactInfo[0].innerHTML = siteContent.contact['address']
+  contactInfo[1].innerHTML = siteContent.contact['phone']
+  contactInfo[2].innerHTML = siteContent.contact['email']
+
+
+  // stretch
+
+  let darkModeButton = document.createElement('button')
+  darkModeButton.innerHTML = 'Switch to Dark Mode?'
+  navBar.append(darkModeButton)
+  darkModeButton.style.background = "black";
+  darkModeButton.style.color = "white";
+
+
+  let mainBackground = document.querySelector("body")
+  
+
+  darkModeButton.addEventListener('click', (e) => {
+    mainBackground.style.background = "#1a1a1a";
+    document.body.style.color = "#666666"
+    
+  })
